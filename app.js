@@ -17,6 +17,20 @@ const crudPosts = require('./utils/crud-posts');
 //     tags: [5,6]
 // });
 
+crudPosts.createPost({
+    title: 'Videogames e passioni',
+    slug: 'videogames-e-passioni',
+    content: 'content',
+    published: true,
+    categoryId: 11,
+    tags: [4]
+});
+
+
+
+
+
+
 // crudPosts.createManyPosts(
 //     {
 //         title: 'Videogames e passioni',
@@ -37,6 +51,7 @@ const crudPosts = require('./utils/crud-posts');
 crudPosts.readAllPosts();
 crudPosts.readPostBySlug('design-e-tempo-libero');
 crudPosts.readAllPublishedPosts();
+crudPosts.readPostByContains('content');
 
 // crudPosts.updatePost(5,{
 //     title: 'La Cucina nelle Fiabe',

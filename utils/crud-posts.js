@@ -51,6 +51,26 @@ module.exports = {
         .catch(err => console.log(err))
     },
 
+    readPostByContains(content) {
+        return prisma.post.findUnique({
+            where: {
+                content: {
+                    contains: 'content'
+                }
+            },
+            include: {
+                category: true,
+                tags: {
+                    select: {
+                        name: true
+                    }
+                }
+            }
+        })
+        .then(post => console.log('Post trovato', post))
+        .catch(err => console.log(err))
+    },
+
     readAllPosts() {
         return prisma.post.findMany({
             include: {
