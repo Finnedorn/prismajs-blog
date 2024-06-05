@@ -34,7 +34,7 @@ module.exports = {
     },
 
     readPostBySlug(slug) {
-        return prisma.post.findUnique({
+        return prisma.post.findMany({
             where: {
                 slug
             },
@@ -52,10 +52,10 @@ module.exports = {
     },
 
     readPostByContains(content) {
-        return prisma.post.findUnique({
+        return prisma.post.findMany({
             where: {
                 content: {
-                    contains: 'content'
+                    contains: content
                 }
             },
             include: {
