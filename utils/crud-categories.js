@@ -7,7 +7,8 @@ module.exports = {
         return prisma.category.create({
             data: {
                 name: category
-            }
+            },
+            skipDuplicates: true
         })
         .then(category => console.log('Categoria creata', category))
         .catch(err => console.log(err))
@@ -15,7 +16,8 @@ module.exports = {
 
     createManyCategories(categories) {
         return prisma.category.createMany({
-            data: categories.map(category => ({ name: category }))
+            data: categories.map(category => ({ name: category })),
+            skipDuplicates: true
         })
         .then(categories => console.log('Categorie create', JSON.stringify(categories, null, 2)))
         .catch(err => console.log(err))
