@@ -50,11 +50,12 @@ crudPosts.createPost({
 // );
 
 
-
 crudPosts.readAllPosts();
 crudPosts.readPostBySlug('design-e-tempo-libero');
 crudPosts.readAllPublishedPosts();
 crudPosts.readPostByContains('content');
+
+
 
 crudPosts.updatePost(5,{
     title: 'La Cucina nelle Fiabe',

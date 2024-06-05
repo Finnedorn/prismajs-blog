@@ -34,7 +34,7 @@ module.exports = {
     },
 
     readPostBySlug(slug) {
-        return prisma.post.findMany({
+        return prisma.post.findUnique({
             where: {
                 slug
             },
